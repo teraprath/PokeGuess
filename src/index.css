@@ -24,7 +24,6 @@
 @layer components {
 
   .versus {
-
     @apply
       h-20 2xl:h-40
       w-20 2xl:w-40
@@ -36,7 +35,7 @@
       rounded-full
       bg-white text-gray-900
     ;
-
     transform: translate(-50%, -50%)
   }
+
 }

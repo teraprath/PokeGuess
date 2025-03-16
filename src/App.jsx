@@ -1,34 +1,40 @@
-import PokeButton from "./components/PokeButton";
+import {useState} from "react";
+import {random} from "./utils/random";
+import Pokemon from "./components/Pokemon";
 
 function App() {
 
-  // TODO: Fetch API
-  const pokemons = [
-    {
-      id: 23,
-      name: "Pikachu",
-      type: "electric"
-    },
-    {
-      id: 303,
-      name: "Haunter",
-      type: "ghost"
-    }
-  ]
+  const [playing, setPlaying] = useState(true);
+  const [pokemon, setPokemon] = useState([random(), random()]);
+
+  function updatePokemon(selectedIndex) {
+    setPokemon(prevPokemon => prevPokemon.map((item, index) => index === selectedIndex ? item : random()));
+  }
 
   return (
-    <>
-      <main
-        className="h-screen flex flex-col 2xl:flex-row select-none cursor-default"
-      >
+    <main>
+      {
+        playing ?
 
-        <PokeButton pokemon={pokemons[0]} />
-        <PokeButton pokemon={pokemons[1]} />
+          <section
+              className="h-screen flex flex-col 2xl:flex-row select-none cursor-default"
+          >
 
-        <div className="versus">VS</div>
+            <Pokemon index={0} pokemonId={pokemon[0]} updatePokemon={updatePokemon} />
+            <Pokemon index={1} pokemonId={pokemon[1]} updatePokemon={updatePokemon} />
 
-      </main>
-    </>
+            <div className="versus">VS</div>
+
+          </section>
+
+        :
+
+          <section
+            className=""
+          >
+          </section>
+      }
+    </main>
   )
 }
 
