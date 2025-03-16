@@ -33,6 +33,7 @@ function Pokemon({ index, pokemonId, updatePokemon }) {
                 uppercase
                 bg-${data ? data.types[0].type.name : "white"}
                 hover:opacity-85 hover:scale-95 hover:rounded-xl 
+                active:opacity-85 active:scale-95 active:rounded-xl 
                 transition-all duration-300
                 cursor-pointer
             `}
