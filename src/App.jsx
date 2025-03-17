@@ -76,6 +76,7 @@ function App() {
         setHighScore(score)
       }
 
+      setCount(0)
       setScore(0)
       setPokemonIds([random(), random()])
       setGameState(gameState.over)
