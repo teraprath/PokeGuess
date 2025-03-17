@@ -23,6 +23,10 @@
 
 @layer components {
 
+  .button {
+    @apply uppercase text-base lg:text-lg font-semibold h-20 w-60 rounded-md transition-all duration-300 cursor-pointer;
+  }
+
   .versus {
     @apply
       h-20 2xl:h-40
@@ -33,7 +37,7 @@
       font-bold
       text-3xl 2xl:text-5xl
       rounded-full
-      bg-white text-gray-900
+      bg-white text-gray-600
     ;
     transform: translate(-50%, -50%)
   }

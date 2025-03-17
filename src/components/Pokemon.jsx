@@ -1,25 +1,4 @@
-import {useEffect, useState} from "react";
-
-function Pokemon({ index, pokemonId, updatePokemon }) {
-
-    const [data, setData] = useState(null);
-
-    useEffect(() => {
-
-        const fetchData = async () => {
-            try {
-                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
-                const data = await response.json();
-                setData(data);
-                console.log(data);
-            } catch (error) {
-                console.error("Could not load data:", error);
-            }
-        }
-
-        fetchData().catch(err => console.log(err));
-
-    }, [pokemonId]);
+function Pokemon({ index, data, updatePokemon }) {
 
     return (
         <button
