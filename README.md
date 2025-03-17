@@ -2,7 +2,7 @@
 
 # A Higher or Lower Game made in React
 
-Compare pokemons based on total stats.
+Compare pokemon based on total stats.
 
 [Live Demo](https://pokeguess.teraprath.dev)
 

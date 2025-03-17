@@ -12,6 +12,7 @@ function App() {
 
   const [pokemonIds, setPokemonIds] = useState([random(), random()]);
   const [pokemonData, setPokemonData] = useState([null, null]);
+  const [count, setCount] = useState(0);
 
   const [score, setScore] = useState(0);
   const [finalScore, setFinalScore] = useState(0);
@@ -54,11 +55,18 @@ function App() {
     if (isWinner) {
 
       setScore(prevScore => prevScore + 1)
-      setPokemonIds(prevPokemon =>
-          prevPokemon.map((item, index) =>
-              index === selectedIndex ? item : random()
-          )
-      )
+
+      if (count >= 5) {
+        setCount(0);
+        setPokemonIds([random(), random()])
+      } else {
+        setCount(prevCount => prevCount + 1);
+        setPokemonIds(prevPokemon =>
+            prevPokemon.map((item, index) =>
+                index === selectedIndex ? item : random()
+            )
+        )
+      }
 
     } else {
 
