@@ -21,6 +21,14 @@
   --color-fairy: #ec8fe6;
 }
 
+@layer base {
+
+  img {
+    pointer-events: none;
+  }
+
+}
+
 @layer components {
 
   .button {

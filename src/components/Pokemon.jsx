@@ -24,7 +24,6 @@ function Pokemon({ index, data, updatePokemon }) {
                     className="h-60 xl:h-65 2xl:h-80 z-10 drop-shadow-md"
                     src={data?.sprites?.other?.['official-artwork']?.front_default || "/ball.svg"}
                     alt="pokemon"
-                    draggable={false}
                 />
                 <div
                     className={`p-2 xl:p-4 z-10 bg-white text-${data ? data.types[0].type.name : "text-gray-900"}`}
