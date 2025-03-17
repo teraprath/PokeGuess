@@ -27,12 +27,16 @@
     pointer-events: none;
   }
 
+  select {
+    text-align-last: center;
+  }
+
 }
 
 @layer components {
 
   .button {
-    @apply uppercase text-base lg:text-lg font-semibold h-20 w-60 rounded-md transition-all duration-300 cursor-pointer;
+    @apply uppercase text-base lg:text-lg font-semibold h-20 w-60 rounded-md shadow-sm transition-all duration-300 cursor-pointer;
   }
 
   .versus {

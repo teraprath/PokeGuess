@@ -8,7 +8,7 @@ function GameOverMenu({ setGameState, score, highScore }) {
             <div className="flex flex-col items-center">
                 <h1 className="font-bold text-4xl lg:text-6xl text-gray-600 uppercase">Game Over</h1>
                 { score === highScore
-                    ? <h2 className="font-semibold text-2xl lg:text-3xl text-gray-600 uppercase">New Highscore: {score}</h2>
+                    ? <h2 className="font-semibold text-2xl lg:text-3xl text-gray-400 uppercase">New Record: {score}</h2>
                     : <h2 className="font-semibold text-2xl lg:text-3xl text-gray-600 uppercase">Score: {score}</h2>
                 }
                 {highScore !== 0 && highScore !== score
